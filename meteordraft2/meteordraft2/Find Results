@@ -1,0 +1,78 @@
+Searching 73 files for "accounts"
+
+/Users/vidushimeel/Desktop/meteordraft2/meteordraft2/db.sqlite3:
+    <binary>
+
+/Users/vidushimeel/Desktop/meteordraft2/meteordraft2/meteordraft2/urls.py:
+    5  urlpatterns = [
+    6      path('', include('landing.urls')),
+    7:     path('accounts/', include('allauth.urls')),
+    8      path('admin/', admin.site.urls),
+    9  
+
+/Users/vidushimeel/Desktop/meteordraft2/meteordraft2/templates/account/login.html:
+   17      {% if socialaccount_providers %}
+   18      <p>{% blocktrans with site.name as site_name %}Please sign in with one
+   19:     of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+   20      for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+   21  
+
+/Users/vidushimeel/Desktop/meteordraft2/meteordraft2/templates/socialaccount/connections.html:
+    8  <h1>{% trans "Account Connections" %}</h1>
+    9  
+   10: {% if form.accounts %}
+   11: <p>{% blocktrans %}You can sign in to your account using any of the following third party accounts:{% endblocktrans %}</p>
+   12  
+   13  
+   ..
+   20  {% endif %}
+   21  
+   22: {% for base_account in form.accounts %}
+   23  {% with base_account.get_provider_account as account %}
+   24  <div>
+   ..
+   41  
+   42  {% else %}
+   43: <p>{% trans 'You currently have no social network accounts connected to this account.' %}</p>
+   44  {% endif %}
+   45  
+
+/Users/vidushimeel/Desktop/meteordraft2/meteordraft2/templates/socialaccount/login_cancelled.html:
+   11  {% url 'account_login' as login_url %}
+   12  
+   13: <p>{% blocktrans %}You decided to cancel logging in to our site using one of your existing accounts. If this was a mistake, please proceed to <a href="{{login_url}}">sign in</a>.{% endblocktrans %}</p>
+   14  
+   15  {% endblock %}
+
+14 matches across 5 files
+
+
+Searching 73 files for "allauth"
+
+/Users/vidushimeel/Desktop/meteordraft2/meteordraft2/meteordraft2/settings.py:
+   33  
+   34  AUTHENTICATION_BACKENDS = [
+   35:     # Needed to login by username in Django admin, regardless of `allauth`
+   36      'django.contrib.auth.backends.ModelBackend',
+   37  
+   38:     # `allauth` specific authentication methods, such as login by e-mail
+   39:     'allauth.account.auth_backends.AuthenticationBackend',
+   40  ]
+   41  
+   ..
+   46  
+   47      'crispy_forms',
+   48:     'allauth',
+   49:     'allauth.account',
+   50:     'allauth.socialaccount',
+   51      
+   52      'django.contrib.admin',
+
+/Users/vidushimeel/Desktop/meteordraft2/meteordraft2/meteordraft2/urls.py:
+    5  urlpatterns = [
+    6      path('', include('landing.urls')),
+    7:     path('accounts/', include('allauth.urls')),
+    8      path('admin/', admin.site.urls),
+    9  
+
+7 matches across 2 files
